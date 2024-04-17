@@ -2,6 +2,7 @@ package com.samkt.pawtrait.data
 
 import android.util.Log
 import com.samkt.pawtrait.model.CatResponse
+import com.samkt.pawtrait.model.catDetails.CatDetailResponse
 import com.samkt.pawtrait.utils.HttpRoutes
 import io.ktor.client.HttpClient
 import io.ktor.client.plugins.contentnegotiation.*
@@ -17,6 +18,14 @@ class CatApiService(
 ) {
     suspend fun getCats(): List<CatResponse> {
         return client.get(urlString = HttpRoutes.getCats(10))
+            .bodyAsText()
+            .let { json ->
+                Json.decodeFromString(json)
+            }
+    }
+
+    suspend fun getCatDetails(imageId: String): CatDetailResponse {
+        return client.get(urlString = HttpRoutes.getCatDetails(imageId))
             .bodyAsText()
             .let { json ->
                 Json.decodeFromString(json)
