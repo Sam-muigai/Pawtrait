@@ -83,7 +83,10 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 
-    // Voyager
+    // Voyager ScreenModel
     implementation("cafe.adriel.voyager:voyager-screenmodel:$voyagerVersion")
+
+    // Navigator
+    implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
 
 }
