@@ -89,4 +89,9 @@ dependencies {
 
     // Coil
     implementation("io.coil-kt:coil-compose:2.6.0")
+
+    // Animation
+    implementation("androidx.compose.ui:ui:1.7.0-SNAPSHOT")
+    implementation("androidx.compose.animation:animation-core:1.7.0-SNAPSHOT")
+    implementation("androidx.compose.animation:animation:1.7.0-SNAPSHOT")
 }
