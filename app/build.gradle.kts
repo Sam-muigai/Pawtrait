@@ -2,6 +2,8 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.serialization")
+    id("kotlinx-serialization")
+
 }
 
 android {
@@ -51,6 +53,7 @@ android {
 }
 
 dependencies {
+    val voyagerVersion = "1.0.0"
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
@@ -74,9 +77,13 @@ dependencies {
     implementation("io.ktor:ktor-client-android:2.3.2")
     implementation("io.ktor:ktor-client-serialization:2.3.2")
     implementation("io.ktor:ktor-client-logging:2.3.2")
+    implementation("io.ktor:ktor-serialization-kotlinx-json:2.3.2")
+    implementation("io.ktor:ktor-client-content-negotiation:2.3.2")
     implementation("ch.qos.logback:logback-classic:1.2.3")
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
 
+    // Voyager
+    implementation("cafe.adriel.voyager:voyager-screenmodel:$voyagerVersion")
 
 }
