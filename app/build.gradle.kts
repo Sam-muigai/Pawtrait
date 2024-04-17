@@ -3,7 +3,6 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.serialization")
     id("kotlinx-serialization")
-
 }
 
 android {
@@ -28,7 +27,7 @@ android {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                "proguard-rules.pro",
             )
         }
     }
@@ -71,8 +70,7 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
-
-    //Ktor
+    // Ktor
     implementation("io.ktor:ktor-client-core:2.3.2")
     implementation("io.ktor:ktor-client-android:2.3.2")
     implementation("io.ktor:ktor-client-serialization:2.3.2")
@@ -89,4 +87,6 @@ dependencies {
     // Navigator
     implementation("cafe.adriel.voyager:voyager-navigator:$voyagerVersion")
 
+    // Coil
+    implementation("io.coil-kt:coil-compose:2.6.0")
 }

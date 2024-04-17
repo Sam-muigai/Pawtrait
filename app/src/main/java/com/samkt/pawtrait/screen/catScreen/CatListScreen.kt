@@ -1,5 +1,6 @@
 package com.samkt.pawtrait.screen.catScreen
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,9 +15,13 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import cafe.adriel.voyager.core.model.rememberScreenModel
 import cafe.adriel.voyager.core.screen.Screen
 import com.samkt.pawtrait.model.CatResponse
+import com.samkt.pawtrait.screen.catScreen.components.CatImageCard
 
 class CatListScreen : Screen {
     @Composable
@@ -66,9 +71,25 @@ fun CatListScreenContent(
             modifier = Modifier.padding(paddingValues),
         ) {
             LazyColumn(
+                verticalArrangement = Arrangement.spacedBy(20.dp),
                 content = {
+                    item {
+                        Column(
+                            modifier = Modifier.padding(top = 22.dp, start = 20.dp),
+                        ) {
+                            Text(
+                                text = "Pawtrait",
+                                fontSize = 36.sp,
+                                fontWeight = FontWeight.SemiBold,
+                            )
+                        }
+                    }
                     items(cats) {
-                        Text(text = it.url)
+                        CatImageCard(
+                            url = it.url,
+                            onClick = {
+                            },
+                        )
                     }
                 },
             )
