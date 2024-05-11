@@ -21,7 +21,11 @@ class CatListScreenModel : ScreenModel {
         MutableStateFlow<CatListScreenState>(CatListScreenState.Loading)
     val catListScreenState = _catListScreenState.asStateFlow()
 
-    fun getCats() {
+    init {
+        getCats()
+    }
+
+    private fun getCats() {
         screenModelScope.launch {
             repository.getAllCats().collectLatest { result ->
                 when (result) {

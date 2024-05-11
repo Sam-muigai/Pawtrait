@@ -18,14 +18,14 @@ import coil.request.ImageRequest
 fun CatImageCard(
     modifier: Modifier = Modifier,
     url: String = "",
-    onClick: (String) -> Unit,
+    onClick: () -> Unit,
 ) {
     val context = LocalContext.current
     AsyncImage(
         modifier =
             modifier
                 .clickable {
-                    onClick.invoke(url)
+                    onClick()
                 }
                 .fillMaxWidth()
                 .padding(horizontal = 8.dp)

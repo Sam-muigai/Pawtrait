@@ -1,11 +1,13 @@
 package com.samkt.pawtrait.model.catDetails
 
 
-import com.squareup.moshi.Json
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class Weight(
-    @Json(name = "imperial")
+    @SerialName("imperial")
     val imperial: String,
-    @Json(name = "metric")
+    @SerialName("metric")
     val metric: String
 )

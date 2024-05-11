@@ -1,17 +1,19 @@
 package com.samkt.pawtrait.model.catDetails
 
 
-import com.squareup.moshi.Json
+import kotlinx.serialization.SerialName
+import kotlinx.serialization.Serializable
 
+@Serializable
 data class CatDetailResponse(
-    @Json(name = "breeds")
+    @SerialName("breeds")
     val breeds: List<Breed>,
-    @Json(name = "height")
+    @SerialName("height")
     val height: Int,
-    @Json(name = "id")
+    @SerialName("id")
     val id: String,
-    @Json(name = "url")
+    @SerialName("url")
     val url: String,
-    @Json(name = "width")
+    @SerialName("width")
     val width: Int
 )
