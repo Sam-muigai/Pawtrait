@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
@@ -35,8 +36,8 @@ import cafe.adriel.voyager.navigator.currentOrThrow
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.samkt.pawtrait.model.catDetails.CatDetailResponse
-import com.samkt.pawtrait.screen.catScreen.components.ErrorScreen
-import com.samkt.pawtrait.screen.catScreen.components.LoadingScreen
+import com.samkt.pawtrait.screen.components.ErrorScreen
+import com.samkt.pawtrait.screen.components.LoadingScreen
 
 data class CatDetailScreen(val imageId: String) : Screen {
     @Composable
@@ -124,7 +125,8 @@ fun CartDetailScreenContent(
                     containerColor = Color(0xFF7D7D7D),
                     modifier =
                         Modifier.align(Alignment.TopStart)
-                            .padding(20.dp),
+                            .padding(20.dp)
+                            .size(35.dp),
                     onClick = onBackPressed,
                 ) {
                     Icon(

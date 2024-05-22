@@ -1,9 +1,8 @@
-package com.samkt.pawtrait.screen.catScreen.components
+package com.samkt.pawtrait.screen.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -24,13 +23,12 @@ fun CatImageCard(
     AsyncImage(
         modifier =
             modifier
+                .fillMaxWidth()
+                .height(204.dp)
+                .clip(RoundedCornerShape(8.dp))
                 .clickable {
                     onClick()
-                }
-                .fillMaxWidth()
-                .padding(horizontal = 8.dp)
-                .height(204.dp)
-                .clip(RoundedCornerShape(8.dp)),
+                },
         model =
             ImageRequest.Builder(context)
                 .data(url)
